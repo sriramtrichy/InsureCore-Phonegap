@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>InsurerCore</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	!function(name,path,ctx){
+	var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+	}('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.0.3.min.js',this);
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+        function Nativealert(msg, title) {
+            navigator.notification.alert(msg, null, title, "Close");
+        }
+        //Globally Setting User's Device Type
+        var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+        
+        localStorage.setItem('deviceType',deviceType);
+		
+
+	</script>
+	<div id="main"></div>
+	<script src="js/index.js"></script>
+	<script src="js/common.js"></script>    
+	<script src="js/canvas-video-player.js"></script>
+	<script src="build/bundle.js"></script>
+</body>
+</html>
